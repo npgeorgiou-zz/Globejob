@@ -1,0 +1,35 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #101010 ;
+}
+.badge {
+    float: right;
+    background-color: #1e92f3;
+}
+.spinner {
+    width: 480px;
+    height: 360px;
+    position: absolute;
+    margin:auto;
+}
+.btn-red {
+    color: #DCDCDC;
+    background-color: #CC0000;
+    border-color: #CC0000;
+}
+
+.btn-blue {
+    color: #DCDCDC;
+    background-color: #00B8E6;
+    border-color: #00B8E6;
+}
+
+.btn-green {
+    color: #DCDCDC;
+    background-color: green;
+    border-color: #00B8E6;
+}

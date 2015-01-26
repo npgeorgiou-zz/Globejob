@@ -22,7 +22,6 @@ var mysqlPool = mysql.createPool({
 });
 
 /* GET all jobs */
-//ddddddddddd
 router.get('/jobs', function (req, res) {
 
     mysqlPool.getConnection(function (err, connection) {
