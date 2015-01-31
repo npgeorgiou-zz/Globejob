@@ -5,7 +5,7 @@ var http = require('http');
 
 /* GET home page. */
 router.get('/', function (req, res) {
-    res.redirect("app/jobsForUserView/main.html")
+    res.redirect("app/views/main.html")
 });
 
 
