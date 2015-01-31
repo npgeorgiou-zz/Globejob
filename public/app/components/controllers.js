@@ -27,44 +27,7 @@ angular.module('myAppRename.controllers', ['angularUtils.directives.dirPaginatio
         $scope.message = '';
         $scope.error = null;
 
-        $scope.submit = function () {
-            //input control
-            $http
-                .post('/authenticate', $scope.user)
-                .success(function (data, status, headers, config) {
-                    $window.sessionStorage.token = data.token;
-                    $scope.isAuthenticated = true;
-                    var encodedProfile = data.token.split('.')[1];
-                    var profile = JSON.parse(url_base64_decode(encodedProfile));
 
-                    $scope.username = profile.username;
-                    $scope.isAdmin = profile.role === true;
-                    $scope.isUser = profile.role === false;
-                    $scope.error = null;
-
-                    //redirect to view that in relevant to user
-                    if($scope.isUser){
-                        $location.path('/jobsForUserView');
-                    }else{
-                        $location.path('/jobsForAdminView');
-                    }
-
-                })
-                .error(function (data, status, headers, config) {
-                    // Erase the token if the user fails to log in
-                    delete $window.sessionStorage.token;
-                    $scope.isAuthenticated = false;
-                    $scope.error = 'You failed to login. Invalid User or Password';
-                });
-        };
-
-        $scope.logout = function () {
-            $scope.isAuthenticated = false;
-            $scope.isAdmin = false;
-            $scope.isUser = false;
-            delete $window.sessionStorage.token;
-            $location.path("/view1");
-        }
     });
 
 

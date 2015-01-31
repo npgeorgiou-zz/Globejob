@@ -4,17 +4,17 @@ var path = require('path');
 var mysql = require('mysql');
 
 var mysqlPool = mysql.createPool({
-//        host: 'jobdatabase-instance.c2gvfuzbyz3i.eu-central-1.rds.amazonaws.com',
-//        port: 3306,
-//        database: 'JobDatabase',
-//        user: 'nikos',
-//        password: '66reggae',
-
-    host: 'localhost',
+    host: 'jobdatabase-instance.c2gvfuzbyz3i.eu-central-1.rds.amazonaws.com',
     port: 3306,
-    database: 'jobdatabase',
-    user: 'root',
-    password: 'qwerty',
+    database: 'JobDatabase',
+    user: 'nikos',
+    password: '66reggae',
+
+//    host: 'localhost',
+//    port: 3306,
+//    database: 'jobdatabase',
+//    user: 'root',
+//    password: 'qwerty',
 
     acquireTimeout: 2000,
     connectionLimit: 20,
