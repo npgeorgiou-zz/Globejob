@@ -8,5 +8,5 @@ router.get('/', function (req, res) {
     res.redirect("app/views/main.html")
 });
 
-
+//comment for got push
 module.exports = router;
