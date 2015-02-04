@@ -1,4 +1,4 @@
-# Globejob
+# GlobeJob
 
 This project is the server and client part of a larger application that crawls the web for english-speaking jobs in Denmark
 
