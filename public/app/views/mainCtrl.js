@@ -143,16 +143,16 @@ angular.module('myAppRename', ['angularUtils.directives.dirPagination'])
                             case "IT":
                                 $scope.clickFieldMemory[1].badgeN++
                                 break;
-                            case "BUSINESS/OFFICE":
+                            case "BUSINESS_OFFICE":
                                 $scope.clickFieldMemory[2].badgeN++
                                 break;
                             case "LEADERSHIP":
                                 $scope.clickFieldMemory[3].badgeN++
                                 break;
-                            case "MED/SOC":
+                            case "MED_SOC":
                                 $scope.clickFieldMemory[4].badgeN++
                                 break;
-                            case "RES/EDU":
+                            case "RES_EDU":
                                 $scope.clickFieldMemory[5].badgeN++
                                 break;
                             case "SERVICE":
