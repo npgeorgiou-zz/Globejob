@@ -20,10 +20,10 @@ angular.module('myAppRename', ['angularUtils.directives.dirPagination'])
         $scope.clickFieldMemory = [
             {id: 0, value: 'NATURAL_SCIENCES', ticked: false, badgeN: 0},
             {id: 1, value: 'IT', ticked: false, badgeN: 0},
-            {id: 2, value: 'BUSINESS/OFFICE', ticked: false, badgeN: 0},
+            {id: 2, value: 'BUSINESS_OFFICE/OFFICE', ticked: false, badgeN: 0},
             {id: 3, value: 'LEADERSHIP', ticked: false, badgeN: 0},
-            {id: 4, value: 'MED/SOC', ticked: false, badgeN: 0},
-            {id: 5, value: 'RES/EDU', ticked: false, badgeN: 0},
+            {id: 4, value: 'MED_SOC', ticked: false, badgeN: 0},
+            {id: 5, value: 'RES_EDU', ticked: false, badgeN: 0},
             {id: 6, value: 'SERVICE', ticked: false, badgeN: 0},
             {id: 7, value: 'STUDENT', ticked: false, badgeN: 0}
         ];
