@@ -323,7 +323,7 @@
     <section class="content">
         <div class="header" style="margin-left:20px;">
             <h1>
-                {{filteredJobs.length}} Jobs Found
+                {{filtered.length}} Jobs Found
             </h1>
 
             <div class="btn-group pull-right" style="top: -50px;">
@@ -341,7 +341,7 @@
         <div style=" margin-top:70px;" id="jobs_container">
             <img class="spinner" src="../../img/spinner.gif" ng-show="loading" style="z-index: 100;">
             <ul style=" margin-bottom:30px;">
-                <li dir-paginate="job in jobs | orderBy:predicate:!reverse | filter:search | itemsPerPage: pageSize"
+                <li dir-paginate="job in filtered = (jobs | filter: query) |  filter:search | orderBy:predicate:!reverse | itemsPerPage: pageSize"
                     current-page="currentPage">
                     <div class="job_posting">
                         <div class="job_title_container">
