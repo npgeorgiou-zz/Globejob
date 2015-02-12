@@ -146,7 +146,7 @@ body.fixed .wrapper {
 /* Content */
 .content {
     padding: 20px 80px;
-    max-width:900px;
+    max-width: 900px;
     background: #f9f9f9;
 }
 
@@ -869,7 +869,7 @@ body > .header .logo .icon {
  *  Gives us the push menu effect
  */
 @media screen and (max-width: 992px) {
-    .pageJS {
+    .relative {
         position: relative;
     }
 
@@ -929,7 +929,6 @@ body > .header .logo .icon {
     background-color: #3c8dbc;
     color: #f9f9f9;
 }
-
 
 /*
     Navbar custom dropdown menu
@@ -1433,8 +1432,6 @@ body > .header .logo .icon {
 .table tr > td .progress {
     margin: 0;
 }
-
-
 
 .progress-bar-green,
 .progress-bar-success {
@@ -2997,7 +2994,6 @@ Component: timeline
     }
 }
 
-
 /*
     Skin Black
     --------
@@ -4002,7 +3998,8 @@ fieldset[disabled] .btn-vk.active {
     font-size: 16px;
     /*font-weight: bold;*/
 }
-.pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus {
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
     z-index: 2;
     color: #fff;
     cursor: default;
