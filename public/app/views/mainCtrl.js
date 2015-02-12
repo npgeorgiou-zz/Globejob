@@ -59,7 +59,6 @@ angular.module('myAppRename', ['angularUtils.directives.dirPagination'])
                 console.log(data)
             });
 
-
         $scope.clickField = function (i) {
             //change clicked field value
             if ($scope.clickFieldMemory[i].ticked === false) {
@@ -165,7 +164,6 @@ angular.module('myAppRename', ['angularUtils.directives.dirPagination'])
                     }
                 });
 
-
                 //from the jobs that remain after the filters, count areas
                 $scope.jobs.forEach(function (j) {
                     switch (j.area) {
@@ -237,5 +235,4 @@ angular.module('myAppRename', ['angularUtils.directives.dirPagination'])
             }
         }
 
-        $scope.blue = "blue"
     }]);
