@@ -6,7 +6,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var queries = require('./routes/queries');
-var expressJwt = require('express-jwt');
 
 var app = express();
 
@@ -25,6 +24,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.static(path.join(__dirname, '../public/app')));
 app.use(express.static(path.join(__dirname, '../public/img')));
+app.use(express.static(path.join(__dirname, '../public/vendor')));
 
 app.use('/', routes);
 app.use('/query', queries);
