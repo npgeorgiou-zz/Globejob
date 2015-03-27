@@ -222,7 +222,13 @@
                 scope.setCurrent = function(num) {
                     if (isValidPageNumber(num)) {
                         paginationService.setCurrentPage(paginationId, num);
+
+                        //scroll on top
+                        $("html, body").animate({
+                            scrollTop: 0
+                        }, 600);
                     }
+
                 };
 
                 function goToPage(num) {

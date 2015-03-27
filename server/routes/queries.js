@@ -29,7 +29,13 @@ router.get('/jobs', function (req, res) {
             console.log(err);
             return;
         } else {
-            var q = "SELECT * FROM jobs, fields WHERE jobs.ID = fields.jobID";
+            var q = "SELECT * "
+            +"FROM jobs, fields "
+            +"WHERE jobs.ID = fields.jobID";
+
+//            var q = "SELECT * "
+//            +"FROM jobs, fields, companies "
+//            +"WHERE jobs.ID = fields.jobID AND jobs.company = companies.companyName";
             connection.query(q, function (err, rows) {
                 if (err) {
                     console.log(err);

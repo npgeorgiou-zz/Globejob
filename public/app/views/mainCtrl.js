@@ -207,6 +207,8 @@ angular.module('myAppRename', ['angularUtils.directives.dirPagination'])
             }, 500);
 
         };
+
+
         function Spinner() {
             var container = document.getElementById("jobs_container");
             var SpinnersInRow = 0;
