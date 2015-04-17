@@ -59,15 +59,21 @@ angular.module('myAppRename', ['angularUtils.directives.dirPagination'])
                 console.log(data)
             });
 
+
+
         $scope.clickField = function (i) {
+            alert("here")
             //change clicked field value
             if ($scope.clickFieldMemory[i].ticked === false) {
                 $scope.clickFieldMemory[i].ticked = true;
+                alert("it came unchecked, i checked it")
             } else {
                 $scope.clickFieldMemory[i].ticked = false;
+                alert("it came checked, i unchecked it")
             }
             $scope.filterJobsByCheckboxes();
         }
+
         $scope.clickArea = function (i) {
         //change clicked area value
             if ($scope.clickAreaMemory[i].ticked === false) {

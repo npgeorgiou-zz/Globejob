@@ -117,6 +117,8 @@
 <!-- /.search form -->
 <!-- sidebar menu: : style can be found in sidebar.less -->
 <ul class="sidebar-menu">
+
+
     <li>
         <a href="#a">
             <span>Job field</span>
@@ -124,10 +126,10 @@
     </li>
 
     <li>
-        <a href="#a">
+        <a href="#a" ng-click="clickField(0)">
                     <span class="checkbox">
                         <label>
-                            <input type="checkbox" value="" ng-click="clickField(0)">
+                            <input type="checkbox" ng-model="clickFieldMemory[0].ticked">
                             <i class="fa fa-cogs"></i> Natural Sciences
                         </label>
                         <small class="badge pull-right bg-green">{{clickFieldMemory[0].badgeN}}</small>
@@ -136,10 +138,10 @@
     </li>
 
     <li>
-        <a href="#a">
+        <a href="#a" ng-click="clickField(1)">
                     <span class="checkbox">
                         <label>
-                            <input type="checkbox" value="" ng-click="clickField(1)">
+                            <input type="checkbox" ng-model="clickFieldMemory[1].ticked" ng-click="clickField(1)">
                             <i class="fa fa-database"></i> IT
                         </label>
                         <small class="badge pull-right bg-green">{{clickFieldMemory[1].badgeN}}</small>
@@ -149,10 +151,10 @@
     </li>
 
     <li>
-        <a href="#a">
+        <a href="#a" ng-click="clickField(2)">
                     <span class="checkbox">
                         <label>
-                            <input type="checkbox" value="" ng-click="clickField(2)">
+                            <input type="checkbox" ng-model="clickFieldMemory[2].ticked" ng-click="clickField(2)">
                             <i class="fa fa-briefcase"></i> Office
                         </label>
                         <small class="badge pull-right bg-green">{{clickFieldMemory[2].badgeN}}</small>
@@ -163,10 +165,10 @@
 
 
     <li>
-        <a href="#a">
+        <a href="#a" ng-click="clickField(3)">
                     <span class="checkbox">
                         <label>
-                            <input type="checkbox" value="" ng-click="clickField(3)">
+                            <input type="checkbox" ng-model="clickFieldMemory[3].ticked" ng-click="clickField(3)">
                             <i class="fa fa-group"></i> Leadership
                         </label>
                         <small class="badge pull-right bg-green">{{clickFieldMemory[3].badgeN}}</small>
@@ -176,10 +178,10 @@
     </li>
 
     <li>
-        <a href="#a">
+        <a href="#a" ng-click="clickField(4)">
                     <span class="checkbox">
                         <label>
-                            <input type="checkbox" value="" ng-click="clickField(4)">
+                            <input type="checkbox" ng-model="clickFieldMemory[4].ticked" ng-click="clickField(4)">
                             <i class="fa fa-medkit"></i> Medical/Social
                         </label>
                         <small class="badge pull-right bg-green">{{clickFieldMemory[4].badgeN}}</small>
@@ -189,10 +191,10 @@
     </li>
 
     <li>
-        <a href="#a">
+        <a href="#a" ng-click="clickField(5)">
                     <span class="checkbox">
                         <label>
-                            <input type="checkbox" value="" ng-click="clickField(5)">
+                            <input type="checkbox" ng-model="clickFieldMemory[5].ticked" ng-click="clickField(5)">
                             <i class="fa fa-graduation-cap"></i> Research/Education
                         </label>
                         <small class="badge pull-right bg-green">{{clickFieldMemory[5].badgeN}}</small>
@@ -202,10 +204,10 @@
     </li>
 
     <li>
-        <a href="#a">
+        <a href="#a" ng-click="clickField(6)">
                     <span class="checkbox">
                         <label>
-                            <input type="checkbox" value="" ng-click="clickField(6)">
+                            <input type="checkbox" ng-model="clickFieldMemory[6].ticked" ng-click="clickField(6)">
                             <i class="fa fa-cutlery"></i> Service
                         </label>
                         <small class="badge pull-right bg-green">{{clickFieldMemory[6].badgeN}}</small>
@@ -215,10 +217,10 @@
     </li>
 
     <li>
-        <a href="#a">
+        <a href="#a" ng-click="clickField(7)">
                     <span class="checkbox">
                         <label>
-                            <input type="checkbox" value="" ng-click="clickField(7)">
+                            <input type="checkbox" ng-model="clickFieldMemory[7].ticked" ng-click="clickField(7)">
                             <i class="fa fa-book"></i> Student
                         </label>
                         <small class="badge pull-right bg-green">{{clickFieldMemory[7].badgeN}}</small>
@@ -236,10 +238,11 @@
     </li>
 
     <li>
-        <a href="#a">
+        <a href="#a" ng-click="clickArea(0)">
                     <span class="checkbox">
                         <label>
-                            <input type="checkbox" value="" ng-click="clickArea(0)"> Copenhagen
+                            <input type="checkbox" ng-model="clickAreaMemory[0].ticked" ng-click="clickArea(0)">
+                            Copenhagen
                         </label>
                         <small class="badge pull-right bg-green">{{clickAreaMemory[0].badgeN}}</small>
                     </span>
@@ -247,10 +250,10 @@
     </li>
 
     <li>
-        <a href="#a">
+        <a href="#a" ng-click="clickArea(1)">
                     <span class="checkbox">
                         <label>
-                            <input type="checkbox" value="" ng-click="clickArea(1)"> Zealand
+                            <input type="checkbox" ng-model="clickAreaMemory[1].ticked" ng-click="clickArea(1)"> Zealand
                         </label>
                         <small class="badge pull-right bg-green">{{clickAreaMemory[1].badgeN}}</small>
                     </span>
@@ -258,10 +261,11 @@
     </li>
 
     <li>
-        <a href="#a">
+        <a href="#a" ng-click="clickArea(2)">
                     <span class="checkbox">
                         <label>
-                            <input type="checkbox" value="" ng-click="clickArea(2)"> South Denmark
+                            <input type="checkbox" ng-model="clickAreaMemory[2].ticked" ng-click="clickArea(2)"> South
+                            Denmark
                         </label>
                         <small class="badge pull-right bg-green">{{clickAreaMemory[2].badgeN}}</small>
                     </span>
@@ -269,10 +273,11 @@
     </li>
 
     <li>
-        <a href="#a">
+        <a href="#a" ng-click="clickArea(3)">
                     <span class="checkbox">
                         <label>
-                            <input type="checkbox" value="" ng-click="clickArea(3)"> Middle Jylland
+                            <input type="checkbox" ng-model="clickAreaMemory[3].ticked" ng-click="clickArea(3)"> Middle
+                            Jylland
                         </label>
                         <small class="badge pull-right bg-green">{{clickAreaMemory[3].badgeN}}</small>
                     </span>
@@ -280,10 +285,11 @@
     </li>
 
     <li>
-        <a href="#a">
+        <a href="#a" ng-click="clickArea(4)">
                     <span class="checkbox">
                         <label>
-                            <input type="checkbox" value="" ng-click="clickArea(4)"> North Jylland
+                            <input type="checkbox" ng-model="clickAreaMemory[4].ticked" ng-click="clickArea(4)"> North
+                            Jylland
                         </label>
                         <small class="badge pull-right bg-green">{{clickAreaMemory[4].badgeN}}</small>
                     </span>
@@ -291,10 +297,10 @@
     </li>
 
     <li>
-        <a href="#a">
+        <a href="#a" ng-click="clickArea(5)">
                     <span class="checkbox">
                         <label>
-                            <input type="checkbox" value="" ng-click="clickArea(5)"> Scania
+                            <input type="checkbox" ng-model="clickAreaMemory[5].ticked" ng-click="clickArea(5)"> Scania
                         </label>
                         <small class="badge pull-right bg-green">{{clickAreaMemory[5].badgeN}}</small>
                     </span>
@@ -302,10 +308,11 @@
     </li>
 
     <li>
-        <a href="#a">
+        <a href="#a" ng-click="clickArea(6)">
                     <span class="checkbox">
                         <label>
-                            <input type="checkbox" value="" ng-click="clickArea(6)"> Greenland & Faroe
+                            <input type="checkbox" ng-model="clickAreaMemory[6].ticked" ng-click="clickArea(6)">
+                            Greenland & Faroe
                         </label>
                         <small class="badge pull-right bg-green">{{clickAreaMemory[6].badgeN}}</small>
                     </span>
@@ -354,9 +361,8 @@
                         <div class="job_date_container">
                             Posted: {{job.postDate | date: 'd MMM' }}
                         </div>
-<!--xcfxcv-->
                         <!--<div class="job_logo_container">-->
-                            <!--<img style="position: absolute; margin: auto; top: 0; bottom: 0; left: 0; right: 0; " src="{{job.logoPath}}">-->
+                        <!--<img style="position: absolute; margin: auto; top: 0; bottom: 0; left: 0; right: 0; " src="{{job.logoPath}}">-->
                         <!--</div>-->
                     </div>
 
@@ -376,7 +382,7 @@
 </div>
 
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js" type="text/javascript"></script>
 
 <script src="../../vendor/angular/angular.js"></script>
@@ -385,6 +391,7 @@
 
 <!-- AdminLTE App -->
 <script src="../../js/pageJS.js" type="text/javascript"></script>
+
 
 
 </body>
