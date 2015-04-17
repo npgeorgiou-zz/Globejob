@@ -33,6 +33,19 @@ router.get('/all', function (req, res) {
     });
 });
 
+/* Delete all users */
+router.get('/delete', function (req, res) {
+    var fs = require('fs')
+
+    fs.truncate(__dirname + '/users.log', 0, function (err) {
+        if (err) {
+            res.end(err)
+        }
+        res.header("Content-type", "application/json");
+        res.end("file flushed")
+    })
+});
+
 
 //comment for got push
 module.exports = router;
