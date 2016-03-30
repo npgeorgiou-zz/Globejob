@@ -42,9 +42,6 @@ router.get('/jobs', function (req, res) {
                     return;
                 } else {
                     connection.release();
-                    //console.log("###################")
-                    //console.log(rows.length)
-                    //console.log("###################")
                     //reconstruct json
                     var previousJobID = 0;
                     var hitJobId;
@@ -52,45 +49,35 @@ router.get('/jobs', function (req, res) {
                     for (var i = 0; i < rows.length; i++) {
                         var j = rows[i];
                         if (i !== 0) {
-//                                console.log("")
-//                                console.log(">>> checking new entry: " + j.title + " " + j.field)
-//                                console.log(">>> : " + previousJobID + " " + j.jobID)
                             if (previousJobID === j.jobID) {//we found a job with 1 or more fields
-//                                    console.log("match: " + previousJobID + " " + j.jobID + " " + j.title)
                                 hitJobId = previousJobID;
                                 if (hitJobId === j.jobID) {//repeated hit
                                     timesThisJobHasHit++;
-//                                        console.log("repeated hit: " + timesThisJobHasHit)
                                 } else {
                                     timesThisJobHasHit = 0
                                 }
                                 var arrayOfFields = [];
                                 for (var x = 0; x < timesThisJobHasHit; x++) {
-                                    arrayOfFields.push(rows[i - 1].field[x])
-//                                        console.log("pushed: " + rows[i - 1].field[x] + " into " + rows[i].jobID)
+                                    arrayOfFields.push(rows[i - 1].field[x]);
                                 }
                                 //add to array current jobs field, and push array into job
-                                arrayOfFields.push(j.field)
-                                j.field = arrayOfFields
-//                                    console.log(rows[i].jobID + " Now is: " + j.field)
-                                previousJobID = j.jobID
+                                arrayOfFields.push(j.field);
+                                j.field = arrayOfFields;
+                                previousJobID = j.jobID;
                                 //and remove previous job
                                 rows.splice(i - 1, 1);
-//                                    console.log("removed: " + rows[i - 1].jobID + " " + rows[i - 1].title)
                                 i--;
                             } else {
-                                //console.log("NOT match: " + previousJobID + " " + j.jobID + " " + j.title)
-                                timesThisJobHasHit = 0
-                                previousJobID = j.jobID
+                                timesThisJobHasHit = 0;
+                                previousJobID = j.jobID;
                                 var arrayOfFields = [];
-                                arrayOfFields.push(j.field)
+                                arrayOfFields.push(j.field);
                                 j.field = arrayOfFields
                             }
                         } else {
-                            previousJobID = j.jobID
-//                                console.log("previousJobID :" + previousJobID)
+                            previousJobID = j.jobID;
                             var arrayOfFields = [];
-                            arrayOfFields.push(j.field)
+                            arrayOfFields.push(j.field);
                             j.field = arrayOfFields
                         }
                     }

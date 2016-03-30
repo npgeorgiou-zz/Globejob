@@ -5,9 +5,9 @@ angular.module('myAppRename', ['angularUtils.directives.dirPagination'])
         $scope.loading = false;
         var mySpinner = Spinner();
 
-        $scope.title = "GlobeJob"
+        $scope.title = "GlobeJob";
 
-        $scope.predicate = "postDate"
+        $scope.predicate = "postDate";
         //pagination vars
         $scope.currentPage = 1;
         $scope.pageSize = 10;
@@ -15,7 +15,7 @@ angular.module('myAppRename', ['angularUtils.directives.dirPagination'])
         $scope.changePageSize = function changePageSize(size) {
             $scope.pageSize = size;
             console.log($scope.pageSize)
-        }
+        };
 
         $scope.clickFieldMemory = [
             {id: 0, value: 'NATURAL_SCIENCES', ticked: false, badgeN: 0},
@@ -49,20 +49,17 @@ angular.module('myAppRename', ['angularUtils.directives.dirPagination'])
         $http({
             method: 'GET',
             url: '/query/jobs'
-        }).
-            success(function (data, status, headers, config) {
-                $scope.jobs = data;
-                $scope.PERMjobs = data;
-                $scope.filterJobsByCheckboxes();
-            }).
-            error(function (data, status, headers, config) {
-                console.log(data)
-            });
-
+        }).success(function (data, status, headers, config) {
+            $scope.jobs = data;
+            $scope.PERMjobs = data;
+            $scope.filterJobsByCheckboxes();
+        }).error(function (data, status, headers, config) {
+            console.log(data)
+        });
 
 
         $scope.clickField = function (i) {
-            alert("here")
+            alert("here");
             //change clicked field value
             if ($scope.clickFieldMemory[i].ticked === false) {
                 $scope.clickFieldMemory[i].ticked = true;
@@ -72,17 +69,17 @@ angular.module('myAppRename', ['angularUtils.directives.dirPagination'])
                 alert("it came checked, i unchecked it")
             }
             $scope.filterJobsByCheckboxes();
-        }
+        };
 
         $scope.clickArea = function (i) {
-        //change clicked area value
+            //change clicked area value
             if ($scope.clickAreaMemory[i].ticked === false) {
                 $scope.clickAreaMemory[i].ticked = true;
             } else {
                 $scope.clickAreaMemory[i].ticked = false;
             }
             $scope.filterJobsByCheckboxes();
-        }
+        };
         $scope.filterJobsByCheckboxes = function () {
             //start loading effect
             mySpinner.startLoadingEffect();
@@ -108,14 +105,14 @@ angular.module('myAppRename', ['angularUtils.directives.dirPagination'])
             }
 
             //filter by field
-            $scope.filteredJobs = $scope.PERMjobs
+            $scope.filteredJobs = $scope.PERMjobs;
 
             $scope.filteredJobs = $scope.filteredJobs.filter(function (j) {
-                var jobHasField = false
+                var jobHasField = false;
                 checkedFieldCheckboxes.forEach(function (c) {
                     for (var i = 0; i < j.field.length; i++) {
                         if (j.field[i] === c.value) {
-                            jobHasField = true
+                            jobHasField = true;
                             break;
                         }
                     }
@@ -125,46 +122,46 @@ angular.module('myAppRename', ['angularUtils.directives.dirPagination'])
 
             //filter by area
             $scope.filteredJobs = $scope.filteredJobs.filter(function (j) {
-                var jobHasArea = false
+                var jobHasArea = false;
                 checkedAreaCheckboxes.forEach(function (c) {
                     if (j.area === c.value) {
                         jobHasArea = true
                     }
                 });
-                return jobHasArea
+                return jobHasArea;
             });
 
             //wait 1 sec and continue set jobs
             setTimeout(function () {
-                resetCounters()
+                resetCounters();
                 $scope.jobs = $scope.filteredJobs;
                 //from the jobs that remain after the filters, count categories
                 $scope.jobs.forEach(function (j) {
                     for (var i = 0; i < j.field.length; i++) {
                         switch (j.field[i]) {
                             case "NATURAL_SCIENCES":
-                                $scope.clickFieldMemory[0].badgeN++
+                                $scope.clickFieldMemory[0].badgeN++;
                                 break;
                             case "IT":
-                                $scope.clickFieldMemory[1].badgeN++
+                                $scope.clickFieldMemory[1].badgeN++;
                                 break;
                             case "BUSINESS_OFFICE":
-                                $scope.clickFieldMemory[2].badgeN++
+                                $scope.clickFieldMemory[2].badgeN++;
                                 break;
                             case "LEADERSHIP":
-                                $scope.clickFieldMemory[3].badgeN++
+                                $scope.clickFieldMemory[3].badgeN++;
                                 break;
                             case "MED_SOC":
-                                $scope.clickFieldMemory[4].badgeN++
+                                $scope.clickFieldMemory[4].badgeN++;
                                 break;
                             case "RES_EDU":
-                                $scope.clickFieldMemory[5].badgeN++
+                                $scope.clickFieldMemory[5].badgeN++;
                                 break;
                             case "SERVICE":
-                                $scope.clickFieldMemory[6].badgeN++
+                                $scope.clickFieldMemory[6].badgeN++;
                                 break;
                             case "STUDENT":
-                                $scope.clickFieldMemory[7].badgeN++
+                                $scope.clickFieldMemory[7].badgeN++;
                                 break;
                         }
                     }
@@ -174,25 +171,25 @@ angular.module('myAppRename', ['angularUtils.directives.dirPagination'])
                 $scope.jobs.forEach(function (j) {
                     switch (j.area) {
                         case "Copenhagen":
-                            $scope.clickAreaMemory[0].badgeN++
+                            $scope.clickAreaMemory[0].badgeN++;
                             break;
                         case "Zealand":
-                            $scope.clickAreaMemory[1].badgeN++
+                            $scope.clickAreaMemory[1].badgeN++;
                             break;
                         case "South Denmark":
-                            $scope.clickAreaMemory[2].badgeN++
+                            $scope.clickAreaMemory[2].badgeN++;
                             break;
                         case "Middle Jylland":
-                            $scope.clickAreaMemory[3].badgeN++
+                            $scope.clickAreaMemory[3].badgeN++;
                             break;
                         case "North Jylland":
-                            $scope.clickAreaMemory[4].badgeN++
+                            $scope.clickAreaMemory[4].badgeN++;
                             break;
                         case "Scania":
-                            $scope.clickAreaMemory[5].badgeN++
+                            $scope.clickAreaMemory[5].badgeN++;
                             break;
                         case "Greenland & Faroe":
-                            $scope.clickAreaMemory[6].badgeN++
+                            $scope.clickAreaMemory[6].badgeN++;
                             break;
                     }
 

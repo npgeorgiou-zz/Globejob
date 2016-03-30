@@ -18,27 +18,27 @@ angular.module('myAppRename', [])
         }
 
         $scope.clearErrors = function clearErrors() {
-            $scope.correctUsername = true
-            $scope.correctEmail = true
-            $scope.correctPassword = true
-        }
+            $scope.correctUsername = true;
+            $scope.correctEmail = true;
+            $scope.correctPassword = true;
+        };
 
         $scope.login = function login() {
             $scope.incorrectUsername = false;
 
             //check input
             if ($scope.username === "") {
-                $scope.correctUsername = false
-                $scope.usernameError = "Please enter a username"
+                $scope.correctUsername = false;
+                $scope.usernameError = "Please enter a username";
             } else {
-                $scope.correctUsername = true
+                $scope.correctUsername = true;
             }
 
             if ($scope.email === "") {
-                $scope.correctEmail = false
-                $scope.emailError = "Please enter an email"
+                $scope.correctEmail = false;
+                $scope.emailError = "Please enter an email";
             } else {
-                $scope.correctEmail = true
+                $scope.correctEmail = true;
             }
 
             var emailRegEx = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
@@ -50,10 +50,10 @@ angular.module('myAppRename', [])
             }
 
             if ($scope.password === "") {
-                $scope.correctPassword = false
-                $scope.passwordError = "Please enter a password"
+                $scope.correctPassword = false;
+                $scope.passwordError = "Please enter a password";
             } else {
-                $scope.correctPassword = true
+                $scope.correctPassword = true;
             }
 
 
@@ -62,7 +62,7 @@ angular.module('myAppRename', [])
                     username: $scope.username,
                     email: $scope.email,
                     pass: $scope.password
-                }
+                };
 
                 $http({
                     method: 'POST',
@@ -74,7 +74,7 @@ angular.module('myAppRename', [])
                         $window.location.href = '/jobs';
                     }).
                     error(function (data, status, headers, config) {
-                        console.log(data)
+                        console.log(data);
                     });
             }
 
